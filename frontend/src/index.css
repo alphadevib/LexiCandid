@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #030712;
+    color: #f8fafc;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Glassmorphism & Micro-animations */
+.glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(30, 41, 59, 0.75);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px -10px rgba(99, 102, 241, 0.2);
+}
+
+/* Interactive Text Viewer Highlights */
+.highlight-high {
+  background-color: rgba(225, 29, 72, 0.18);
+  border-left: 4px solid #f43f5e;
+  color: #fecdd3;
+  transition: all 0.2s ease;
+}
+
+.highlight-high:hover, .highlight-high.active {
+  background-color: rgba(225, 29, 72, 0.32);
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+}
+
+.highlight-medium {
+  background-color: rgba(217, 119, 6, 0.18);
+  border-left: 4px solid #f59e0b;
+  color: #fef3c7;
+  transition: all 0.2s ease;
+}
+
+.highlight-medium:hover, .highlight-medium.active {
+  background-color: rgba(217, 119, 6, 0.32);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+}
+
+.highlight-low {
+  background-color: rgba(16, 185, 129, 0.12);
+  border-left: 4px solid #10b981;
+  color: #d1fae5;
+  transition: all 0.2s ease;
+}
+
+.highlight-low:hover, .highlight-low.active {
+  background-color: rgba(16, 185, 129, 0.22);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+
+/* Subtle glow animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
